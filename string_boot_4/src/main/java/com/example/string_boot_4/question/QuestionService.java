@@ -42,12 +42,12 @@ public class QuestionService {
 //        return PageRequest.of(page, 10, Sort.by(sorts));
 //    }
 
-    public Page<Question> getList(int page, String kw, int sort) {
+    public Page<Question> getList(int page, String kw, String sort) {
         Pageable pageable = null;
-        if (sort == 1){
+        if (sort.equals("Date")){
             pageable = sortDate(page);
         }
-        else if (sort == 2){
+        else if (sort.equals("Hit")){
             pageable = sortHit(page);
         }
 //        else {
